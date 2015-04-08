@@ -183,6 +183,13 @@ type FieldList struct {
 	Closing token.Pos // position of closing parenthesis/brace, if any
 }
 
+// A type over which a function is generic
+type Generic struct {
+	Opening token.Pos
+	Type    *Ident // Maybe wrong
+	Closing token.Pos
+}
+
 func (f *FieldList) Pos() token.Pos {
 	if f.Opening.IsValid() {
 		return f.Opening
@@ -922,11 +929,12 @@ type (
 
 	// A FuncDecl node represents a function declaration.
 	FuncDecl struct {
-		Doc  *CommentGroup // associated documentation; or nil
-		Recv *FieldList    // receiver (methods); or nil (functions)
-		Name *Ident        // function/method name
-		Type *FuncType     // function signature: parameters, results, and position of "func" keyword
-		Body *BlockStmt    // function body; or nil (forward declaration)
+		Doc     *CommentGroup // associated documentation; or nil
+		Recv    *FieldList    // receiver (methods); or nil (functions)
+		Name    *Ident        // function/method name
+		Type    *FuncType     // function signature: parameters, results, and position of "func" keyword
+		Body    *BlockStmt    // function body; or nil (forward declaration)
+		Generic *Generic      // Type over which this func is generic
 	}
 )
 

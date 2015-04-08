@@ -870,6 +870,19 @@ func (p *parser) parseParameters(scope *ast.Scope, ellipsisOk bool) *ast.FieldLi
 	return &ast.FieldList{Opening: lparen, List: params, Closing: rparen}
 }
 
+// Limited to a single type for now
+func (p *parser) parseGeneric(scope *ast.Scope) *ast.Generic {
+	if p.trace {
+		defer un(trace(p, "Generic"))
+	}
+
+	lbr := p.expect(token.LSS)
+	ty := p.parseIdent()
+	rbr := p.expect(token.GTR)
+
+	return &ast.Generic{Opening: lbr, Type: ty, Closing: rbr}
+}
+
 func (p *parser) parseResult(scope *ast.Scope) *ast.FieldList {
 	if p.trace {
 		defer un(trace(p, "Result"))
@@ -2344,6 +2357,7 @@ func (p *parser) parseFuncDecl() *ast.FuncDecl {
 		defer un(trace(p, "FunctionDecl"))
 	}
 
+	var gen *ast.Generic
 	doc := p.leadComment
 	pos := p.expect(token.FUNC)
 	scope := ast.NewScope(p.topScope) // function scope
@@ -2351,6 +2365,12 @@ func (p *parser) parseFuncDecl() *ast.FuncDecl {
 	var recv *ast.FieldList
 	if p.tok == token.LPAREN {
 		recv = p.parseParameters(scope, false)
+	}
+
+	// TODO Assert that we're actually in the top scope, since this function
+	// will never be concrete
+	if p.tok == token.LSS { // Generic
+		gen = p.parseGeneric(scope)
 	}
 
 	ident := p.parseIdent()
@@ -2372,7 +2392,8 @@ func (p *parser) parseFuncDecl() *ast.FuncDecl {
 			Params:  params,
 			Results: results,
 		},
-		Body: body,
+		Body:    body,
+		Generic: gen,
 	}
 	if recv == nil {
 		// Go spec: The scope of an identifier denoting a constant, type,
