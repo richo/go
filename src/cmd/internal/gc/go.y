@@ -488,7 +488,7 @@ case:
 				nn = newname(n.Sym);
 				declare(nn, dclcontext);
 				$$.Nname = nn;
-	
+
 				// keep track of the instances for reporting unused
 				nn.Defn = typesw.Right;
 			}
@@ -534,7 +534,7 @@ case:
 				nn = newname(n.Sym);
 				declare(nn, dclcontext);
 				$$.Nname = nn;
-	
+
 				// keep track of the instances for reporting unused
 				nn.Defn = typesw.Right;
 			}
@@ -572,7 +572,7 @@ caseblock:
 	{
 		// This is the only place in the language where a statement
 		// list is not allowed to drop the final semicolon, because
-		// it's the only place where a statement list is not followed 
+		// it's the only place where a statement list is not followed
 		// by a closing brace.  Handle the error for pedantry.
 
 		// Find the final token of the statement list.
@@ -718,7 +718,7 @@ if_stmt:
 	}
 
 elseif:
-	LELSE LIF 
+	LELSE LIF
 	{
 		markdcl();
 	}
@@ -1056,7 +1056,7 @@ pexpr:
 |	'(' expr_or_type ')'
 	{
 		$$ = $2;
-		
+
 		// Need to know on lhs of := whether there are ( ).
 		// Don't bother with the OPAREN in other cases:
 		// it's just a waste of memory and time.
@@ -1332,9 +1332,59 @@ xfndcl:
 		$$.Func.Nowritebarrier = nowritebarrier;
 		funcbody($$);
 	}
+|   LFUNC genndcl fnbody
+	{
+        Yyerror("boop");
+		$$ = $2;
+		if $$ == nil {
+			break;
+		}
+		if noescape && $3 != nil {
+			Yyerror("can only use //go:noescape with external func implementations");
+		}
+		$$.Nbody = $3;
+		$$.Func.Endlineno = lineno;
+		$$.Noescape = noescape;
+		$$.Func.Nosplit = nosplit;
+		$$.Func.Nowritebarrier = nowritebarrier;
+		funcbody($$);
+	}
+
+gendcl:
+	'<' sym '>' sym '(' oarg_type_list_ocomma ')' fnres
+	{
+		var t *Node
+
+		$$ = nil;
+		$3 = checkarglist($3, 1);
+
+		if $1.Name == "init" {
+			$1 = renameinit();
+			if $3 != nil || $5 != nil {
+				Yyerror("func init must have no arguments and no return values");
+			}
+		}
+		if localpkg.Name == "main" && $1.Name == "main" {
+			if $3 != nil || $5 != nil {
+				Yyerror("func main must have no arguments and no return values");
+			}
+		}
+
+		t = Nod(OTFUNC, nil, nil);
+		t.List = $3;
+		t.Rlist = $5;
+
+		$$ = Nod(ODCLFUNC, nil, nil);
+		$$.Nname = newfuncname($1);
+		$$.Nname.Defn = $$;
+		$$.Nname.Ntype = t;		// TODO: check if nname already has an ntype
+		declare($$.Nname, PFUNC);
+
+		funchdr($$);
+	}
 
 fndcl:
-	sym '(' oarg_type_list_ocomma ')' fnres
+	tyspec sym '(' oarg_type_list_ocomma ')' fnres
 	{
 		var t *Node
 
@@ -1430,14 +1480,14 @@ hidden_fndcl:
 	}
 |	'(' hidden_funarg_list ')' sym '(' ohidden_funarg_list ')' ohidden_funres
 	{
-		$$ = methodname1(newname($4), $2.N.Right); 
+		$$ = methodname1(newname($4), $2.N.Right);
 		$$.Type = functype($2.N, $6, $8);
 
 		checkwidth($$.Type);
 		addmethod($4, $$.Type, false, nointerface);
 		nointerface = false
 		funchdr($$);
-		
+
 		// inl.C's inlnode in on a dotmeth node expects to find the inlineable body as
 		// (dotmeth's type).Nname.Inl, and dotmeth's type has been pulled
 		// out by typecheck's lookdot as this $$.ttype.  So by providing
@@ -2094,7 +2144,7 @@ hidden_funarg:
 |	sym LDDD hidden_type oliteral
 	{
 		var t *Type
-	
+
 		t = typ(TARRAY);
 		t.Bound = -1;
 		t.Type = $3;
