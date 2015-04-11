@@ -74,7 +74,7 @@ state 8
 	xdcl_list: .    (218)
 
 	LIMPORT  shift 19
-	.  reduce 218 (src line 1507)
+	.  reduce 218 (src line 1537)
 
 	xdcl_list  goto 17
 	import  goto 18
@@ -122,7 +122,7 @@ state 15
 	import_there:  $$21.hidden_import_list '$' '$' 
 	hidden_import_list: .    (344)
 
-	.  reduce 344 (src line 2209)
+	.  reduce 344 (src line 2239)
 
 	hidden_import_list  goto 22
 
@@ -373,31 +373,31 @@ state 33
 state 34
 	non_dcl_stmt:  simple_stmt.    (256)
 
-	.  reduce 256 (src line 1734)
+	.  reduce 256 (src line 1764)
 
 
 state 35
 	non_dcl_stmt:  for_stmt.    (257)
 
-	.  reduce 257 (src line 1736)
+	.  reduce 257 (src line 1766)
 
 
 state 36
 	non_dcl_stmt:  switch_stmt.    (258)
 
-	.  reduce 258 (src line 1737)
+	.  reduce 258 (src line 1767)
 
 
 state 37
 	non_dcl_stmt:  select_stmt.    (259)
 
-	.  reduce 259 (src line 1738)
+	.  reduce 259 (src line 1768)
 
 
 state 38
 	non_dcl_stmt:  if_stmt.    (260)
 
-	.  reduce 260 (src line 1739)
+	.  reduce 260 (src line 1769)
 
 
 state 39
@@ -410,7 +410,7 @@ state 39
 state 40
 	non_dcl_stmt:  LFALL.    (263)
 
-	.  reduce 263 (src line 1756)
+	.  reduce 263 (src line 1786)
 
 
 state 41
@@ -538,7 +538,7 @@ state 46
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 292 (src line 1905)
+	.  reduce 292 (src line 1935)
 
 	sym  goto 123
 	expr  goto 129
@@ -593,7 +593,7 @@ state 48
 	expr_list:  expr.    (276)
 
 	LASOP  shift 130
-	LCOLAS  reduce 276 (src line 1840)
+	LCOLAS  reduce 276 (src line 1870)
 	LANDAND  shift 134
 	LANDNOT  shift 149
 	LCOMM  shift 152
@@ -616,8 +616,8 @@ state 48
 	'/'  shift 146
 	'%'  shift 147
 	'&'  shift 148
-	'='  reduce 276 (src line 1840)
-	','  reduce 276 (src line 1840)
+	'='  reduce 276 (src line 1870)
+	','  reduce 276 (src line 1870)
 	.  reduce 49 (src line 410)
 
 
@@ -1120,7 +1120,7 @@ state 74
 	fnlitdcl:  fntype.    (215)
 
 	'('  reduce 181 (src line 1220)
-	.  reduce 215 (src line 1484)
+	.  reduce 215 (src line 1514)
 
 
 state 75
@@ -1167,7 +1167,7 @@ state 77
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 290 (src line 1899)
+	.  reduce 290 (src line 1929)
 
 	sym  goto 123
 	expr  goto 188
@@ -1336,7 +1336,7 @@ state 92
 state 93
 	hidden_import_list:  hidden_import_list hidden_import.    (345)
 
-	.  reduce 345 (src line 2210)
+	.  reduce 345 (src line 2240)
 
 
 state 94
@@ -1395,7 +1395,7 @@ state 99
 state 100
 	xdcl_list:  xdcl_list xdcl ';'.    (219)
 
-	.  reduce 219 (src line 1511)
+	.  reduce 219 (src line 1541)
 
 
 state 101
@@ -1458,7 +1458,7 @@ state 103
 state 104
 	dcl_name_list:  dcl_name.    (274)
 
-	.  reduce 274 (src line 1830)
+	.  reduce 274 (src line 1860)
 
 
 state 105
@@ -1585,7 +1585,7 @@ state 113
 	fnbody: .    (210)
 
 	'{'  shift 242
-	.  reduce 210 (src line 1457)
+	.  reduce 210 (src line 1487)
 
 	fnbody  goto 241
 
@@ -1607,7 +1607,7 @@ state 114
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 249 (src line 1707)
+	.  reduce 249 (src line 1737)
 
 	sym  goto 247
 	ntype  goto 249
@@ -1637,14 +1637,14 @@ state 116
 	non_dcl_stmt:  labelname ':'.$$261 stmt 
 	$$261: .    (261)
 
-	.  reduce 261 (src line 1740)
+	.  reduce 261 (src line 1770)
 
 	$$261  goto 252
 
 state 117
 	non_dcl_stmt:  LBREAK onew_name.    (264)
 
-	.  reduce 264 (src line 1762)
+	.  reduce 264 (src line 1792)
 
 
 state 118
@@ -1662,7 +1662,7 @@ state 119
 state 120
 	non_dcl_stmt:  LCONTINUE onew_name.    (265)
 
-	.  reduce 265 (src line 1766)
+	.  reduce 265 (src line 1796)
 
 
 state 121
@@ -1673,7 +1673,7 @@ state 121
 	'.'  reduce 134 (src line 984)
 	'{'  reduce 134 (src line 984)
 	'['  reduce 134 (src line 984)
-	.  reduce 266 (src line 1770)
+	.  reduce 266 (src line 1800)
 
 
 state 122
@@ -1714,19 +1714,19 @@ state 125
 	'.'  reduce 134 (src line 984)
 	'{'  reduce 134 (src line 984)
 	'['  reduce 134 (src line 984)
-	.  reduce 267 (src line 1774)
+	.  reduce 267 (src line 1804)
 
 
 state 126
 	non_dcl_stmt:  LGOTO new_name.    (268)
 
-	.  reduce 268 (src line 1778)
+	.  reduce 268 (src line 1808)
 
 
 state 127
 	non_dcl_stmt:  LRETURN oexpr_list.    (269)
 
-	.  reduce 269 (src line 1783)
+	.  reduce 269 (src line 1813)
 
 
 state 128
@@ -1734,7 +1734,7 @@ state 128
 	oexpr_list:  expr_list.    (293)
 
 	','  shift 155
-	.  reduce 293 (src line 1909)
+	.  reduce 293 (src line 1939)
 
 
 state 129
@@ -1780,7 +1780,7 @@ state 129
 	'/'  shift 146
 	'%'  shift 147
 	'&'  shift 148
-	.  reduce 276 (src line 1840)
+	.  reduce 276 (src line 1870)
 
 
 state 130
@@ -2805,7 +2805,7 @@ state 156
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 294 (src line 1911)
+	.  reduce 294 (src line 1941)
 
 	sym  goto 123
 	expr  goto 48
@@ -2853,7 +2853,7 @@ state 157
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 294 (src line 1911)
+	.  reduce 294 (src line 1941)
 
 	sym  goto 123
 	expr  goto 48
@@ -2906,7 +2906,7 @@ state 159
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 294 (src line 1911)
+	.  reduce 294 (src line 1941)
 
 	sym  goto 123
 	expr  goto 48
@@ -3016,7 +3016,7 @@ state 162
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 290 (src line 1899)
+	.  reduce 290 (src line 1929)
 
 	sym  goto 123
 	expr  goto 294
@@ -3163,10 +3163,10 @@ state 176
 	convtype:  fntype.    (181)
 	fnlitdcl:  fntype.    (215)
 
-	error  reduce 215 (src line 1484)
-	LBODY  reduce 215 (src line 1484)
+	error  reduce 215 (src line 1514)
+	LBODY  reduce 215 (src line 1514)
 	'('  reduce 181 (src line 1220)
-	'{'  reduce 215 (src line 1484)
+	'{'  reduce 215 (src line 1514)
 	.  reduce 173 (src line 1203)
 
 
@@ -3359,9 +3359,9 @@ state 184
 	'*'  shift 58
 	'&'  shift 59
 	'('  shift 67
-	';'  reduce 251 (src line 1719)
+	';'  reduce 251 (src line 1749)
 	'{'  shift 308
-	'}'  reduce 251 (src line 1719)
+	'}'  reduce 251 (src line 1749)
 	'!'  shift 62
 	'~'  shift 63
 	'['  shift 77
@@ -3403,7 +3403,7 @@ state 184
 state 185
 	fnliteral:  fnlitdcl error.    (217)
 
-	.  reduce 217 (src line 1496)
+	.  reduce 217 (src line 1526)
 
 
 state 186
@@ -3463,7 +3463,7 @@ state 188
 	'/'  shift 146
 	'%'  shift 147
 	'&'  shift 148
-	.  reduce 291 (src line 1903)
+	.  reduce 291 (src line 1933)
 
 
 state 189
@@ -3665,7 +3665,7 @@ state 201
 	osemi: .    (286)
 
 	';'  shift 333
-	.  reduce 286 (src line 1893)
+	.  reduce 286 (src line 1923)
 
 	osemi  goto 332
 
@@ -3757,7 +3757,7 @@ state 212
 state 213
 	hidden_pkg_importsym:  hidden_importsym.    (310)
 
-	.  reduce 310 (src line 1985)
+	.  reduce 310 (src line 2015)
 
 
 state 214
@@ -3807,7 +3807,7 @@ state 215
 state 216
 	hidden_pkgtype:  hidden_pkg_importsym.    (311)
 
-	.  reduce 311 (src line 1992)
+	.  reduce 311 (src line 2022)
 
 
 state 217
@@ -3815,7 +3815,7 @@ state 217
 	fnbody: .    (210)
 
 	'{'  shift 242
-	.  reduce 210 (src line 1457)
+	.  reduce 210 (src line 1487)
 
 	fnbody  goto 353
 
@@ -3845,7 +3845,7 @@ state 220
 	osemi: .    (286)
 
 	';'  shift 359
-	.  reduce 286 (src line 1893)
+	.  reduce 286 (src line 1923)
 
 	osemi  goto 358
 
@@ -3858,7 +3858,7 @@ state 221
 state 222
 	vardcl_list:  vardcl.    (220)
 
-	.  reduce 220 (src line 1523)
+	.  reduce 220 (src line 1553)
 
 
 state 223
@@ -3995,7 +3995,7 @@ state 233
 	osemi: .    (286)
 
 	';'  shift 366
-	.  reduce 286 (src line 1893)
+	.  reduce 286 (src line 1923)
 
 	osemi  goto 365
 
@@ -4060,7 +4060,7 @@ state 237
 	osemi: .    (286)
 
 	';'  shift 370
-	.  reduce 286 (src line 1893)
+	.  reduce 286 (src line 1923)
 
 	osemi  goto 369
 
@@ -4073,7 +4073,7 @@ state 238
 state 239
 	typedcl_list:  typedcl.    (224)
 
-	.  reduce 224 (src line 1537)
+	.  reduce 224 (src line 1567)
 
 
 state 240
@@ -4121,9 +4121,9 @@ state 242
 	'*'  shift 58
 	'&'  shift 59
 	'('  shift 67
-	';'  reduce 251 (src line 1719)
+	';'  reduce 251 (src line 1749)
 	'{'  shift 308
-	'}'  reduce 251 (src line 1719)
+	'}'  reduce 251 (src line 1749)
 	'!'  shift 62
 	'~'  shift 63
 	'['  shift 77
@@ -4176,20 +4176,20 @@ state 244
 	ocomma: .    (288)
 
 	','  shift 373
-	.  reduce 288 (src line 1896)
+	.  reduce 288 (src line 1926)
 
 	ocomma  goto 374
 
 state 245
 	arg_type_list:  arg_type.    (247)
 
-	.  reduce 247 (src line 1697)
+	.  reduce 247 (src line 1727)
 
 
 state 246
 	arg_type:  name_or_type.    (243)
 
-	.  reduce 243 (src line 1681)
+	.  reduce 243 (src line 1711)
 
 
 state 247
@@ -4229,7 +4229,7 @@ state 247
 state 248
 	arg_type:  dotdotdot.    (246)
 
-	.  reduce 246 (src line 1695)
+	.  reduce 246 (src line 1725)
 
 
 state 249
@@ -4285,7 +4285,7 @@ state 251
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 249 (src line 1707)
+	.  reduce 249 (src line 1737)
 
 	sym  goto 247
 	ntype  goto 249
@@ -4311,11 +4311,11 @@ state 252
 	error  shift 307
 	LLITERAL  shift 68
 	LBREAK  shift 41
-	LCASE  reduce 251 (src line 1719)
+	LCASE  reduce 251 (src line 1749)
 	LCHAN  shift 78
 	LCONST  shift 47
 	LCONTINUE  shift 42
-	LDEFAULT  reduce 251 (src line 1719)
+	LDEFAULT  reduce 251 (src line 1749)
 	LDEFER  shift 44
 	LFALL  shift 40
 	LFOR  shift 50
@@ -4339,9 +4339,9 @@ state 252
 	'*'  shift 58
 	'&'  shift 59
 	'('  shift 67
-	';'  reduce 251 (src line 1719)
+	';'  reduce 251 (src line 1749)
 	'{'  shift 308
-	'}'  reduce 251 (src line 1719)
+	'}'  reduce 251 (src line 1749)
 	'!'  shift 62
 	'~'  shift 63
 	'['  shift 77
@@ -4396,7 +4396,7 @@ state 253
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 249 (src line 1707)
+	.  reduce 249 (src line 1737)
 
 	sym  goto 247
 	ntype  goto 249
@@ -5188,7 +5188,7 @@ state 277
 	'/'  shift 146
 	'%'  shift 147
 	'&'  shift 148
-	.  reduce 277 (src line 1845)
+	.  reduce 277 (src line 1875)
 
 
 state 278
@@ -5222,7 +5222,7 @@ state 281
 state 282
 	osimple_stmt:  simple_stmt.    (295)
 
-	.  reduce 295 (src line 1915)
+	.  reduce 295 (src line 1945)
 
 
 state 283
@@ -5325,14 +5325,14 @@ state 290
 
 	LDDD  shift 392
 	','  shift 393
-	.  reduce 288 (src line 1896)
+	.  reduce 288 (src line 1926)
 
 	ocomma  goto 391
 
 state 291
 	expr_or_type_list:  expr_or_type.    (278)
 
-	.  reduce 278 (src line 1850)
+	.  reduce 278 (src line 1880)
 
 
 state 292
@@ -5432,7 +5432,7 @@ state 294
 	'%'  shift 147
 	'&'  shift 148
 	']'  shift 396
-	.  reduce 291 (src line 1903)
+	.  reduce 291 (src line 1933)
 
 
 state 295
@@ -5467,7 +5467,7 @@ state 296
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 284 (src line 1881)
+	.  reduce 284 (src line 1911)
 
 	sym  goto 123
 	expr  goto 402
@@ -5581,7 +5581,7 @@ state 300
 	'%'  shift 147
 	'&'  shift 148
 	','  shift 413
-	.  reduce 288 (src line 1896)
+	.  reduce 288 (src line 1926)
 
 	ocomma  goto 412
 
@@ -5609,7 +5609,7 @@ state 301
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 284 (src line 1881)
+	.  reduce 284 (src line 1911)
 
 	sym  goto 123
 	expr  goto 402
@@ -5644,31 +5644,31 @@ state 302
 state 303
 	stmt_list:  stmt.    (270)
 
-	.  reduce 270 (src line 1804)
+	.  reduce 270 (src line 1834)
 
 
 state 304
 	stmt:  compound_stmt.    (252)
 
-	.  reduce 252 (src line 1723)
+	.  reduce 252 (src line 1753)
 
 
 state 305
 	stmt:  common_dcl.    (253)
 
-	.  reduce 253 (src line 1724)
+	.  reduce 253 (src line 1754)
 
 
 state 306
 	stmt:  non_dcl_stmt.    (254)
 
-	.  reduce 254 (src line 1728)
+	.  reduce 254 (src line 1758)
 
 
 state 307
 	stmt:  error.    (255)
 
-	.  reduce 255 (src line 1729)
+	.  reduce 255 (src line 1759)
 
 
 state 308
@@ -5780,7 +5780,7 @@ state 316
 	osemi: .    (286)
 
 	';'  shift 424
-	.  reduce 286 (src line 1893)
+	.  reduce 286 (src line 1923)
 
 	osemi  goto 423
 
@@ -5793,7 +5793,7 @@ state 317
 state 318
 	structdcl_list:  structdcl.    (226)
 
-	.  reduce 226 (src line 1547)
+	.  reduce 226 (src line 1577)
 
 
 state 319
@@ -5832,7 +5832,7 @@ state 320
 	oliteral: .    (302)
 
 	LLITERAL  shift 428
-	.  reduce 302 (src line 1935)
+	.  reduce 302 (src line 1965)
 
 	oliteral  goto 427
 
@@ -5861,13 +5861,13 @@ state 322
 state 323
 	new_name_list:  new_name.    (272)
 
-	.  reduce 272 (src line 1820)
+	.  reduce 272 (src line 1850)
 
 
 state 324
 	embed:  packname.    (238)
 
-	.  reduce 238 (src line 1646)
+	.  reduce 238 (src line 1676)
 
 
 state 325
@@ -5875,10 +5875,10 @@ state 325
 	packname:  LNAME.    (236)
 	packname:  LNAME.'.' sym 
 
-	LLITERAL  reduce 236 (src line 1621)
-	';'  reduce 236 (src line 1621)
+	LLITERAL  reduce 236 (src line 1651)
+	';'  reduce 236 (src line 1651)
 	'.'  shift 434
-	'}'  reduce 236 (src line 1621)
+	'}'  reduce 236 (src line 1651)
 	.  reduce 157 (src line 1113)
 
 
@@ -5888,7 +5888,7 @@ state 326
 	osemi: .    (286)
 
 	';'  shift 436
-	.  reduce 286 (src line 1893)
+	.  reduce 286 (src line 1923)
 
 	osemi  goto 435
 
@@ -5901,7 +5901,7 @@ state 327
 state 328
 	interfacedcl_list:  interfacedcl.    (228)
 
-	.  reduce 228 (src line 1554)
+	.  reduce 228 (src line 1584)
 
 
 state 329
@@ -5915,7 +5915,7 @@ state 329
 state 330
 	interfacedcl:  packname.    (240)
 
-	.  reduce 240 (src line 1658)
+	.  reduce 240 (src line 1688)
 
 
 state 331
@@ -5942,7 +5942,7 @@ state 333
 	'.'  shift 90
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 287 (src line 1894)
+	.  reduce 287 (src line 1924)
 
 	import_here  goto 87
 	sym  goto 89
@@ -5972,31 +5972,31 @@ state 336
 state 337
 	hidden_type:  hidden_type_misc.    (312)
 
-	.  reduce 312 (src line 2003)
+	.  reduce 312 (src line 2033)
 
 
 state 338
 	hidden_type:  hidden_type_recv_chan.    (313)
 
-	.  reduce 313 (src line 2005)
+	.  reduce 313 (src line 2035)
 
 
 state 339
 	hidden_type:  hidden_type_func.    (314)
 
-	.  reduce 314 (src line 2006)
+	.  reduce 314 (src line 2036)
 
 
 state 340
 	hidden_type_misc:  hidden_importsym.    (317)
 
-	.  reduce 317 (src line 2012)
+	.  reduce 317 (src line 2042)
 
 
 state 341
 	hidden_type_misc:  LNAME.    (318)
 
-	.  reduce 318 (src line 2017)
+	.  reduce 318 (src line 2047)
 
 
 state 342
@@ -6131,7 +6131,7 @@ state 354
 	LNAME  shift 10
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 296 (src line 1917)
+	.  reduce 296 (src line 1947)
 
 	sym  goto 357
 	hidden_importsym  goto 11
@@ -6151,7 +6151,7 @@ state 355
 state 356
 	hidden_funarg_list:  hidden_funarg.    (346)
 
-	.  reduce 346 (src line 2212)
+	.  reduce 346 (src line 2242)
 
 
 state 357
@@ -6191,7 +6191,7 @@ state 359
 	LNAME  shift 10
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 287 (src line 1894)
+	.  reduce 287 (src line 1924)
 
 	sym  goto 105
 	dcl_name  goto 104
@@ -6252,7 +6252,7 @@ state 361
 state 362
 	dcl_name_list:  dcl_name_list ',' dcl_name.    (275)
 
-	.  reduce 275 (src line 1835)
+	.  reduce 275 (src line 1865)
 
 
 state 363
@@ -6305,7 +6305,7 @@ state 366
 	LNAME  shift 10
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 287 (src line 1894)
+	.  reduce 287 (src line 1924)
 
 	sym  goto 105
 	dcl_name  goto 104
@@ -6379,7 +6379,7 @@ state 370
 	LNAME  shift 10
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 287 (src line 1894)
+	.  reduce 287 (src line 1924)
 
 	sym  goto 112
 	typedclname  goto 111
@@ -6412,7 +6412,7 @@ state 372
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 212 (src line 1469)
+	.  reduce 212 (src line 1499)
 
 	sym  goto 485
 	dotname  goto 493
@@ -6444,7 +6444,7 @@ state 373
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 289 (src line 1897)
+	.  reduce 289 (src line 1927)
 
 	sym  goto 247
 	ntype  goto 249
@@ -6464,19 +6464,19 @@ state 373
 state 374
 	oarg_type_list_ocomma:  arg_type_list ocomma.    (250)
 
-	.  reduce 250 (src line 1711)
+	.  reduce 250 (src line 1741)
 
 
 state 375
 	arg_type:  sym name_or_type.    (244)
 
-	.  reduce 244 (src line 1683)
+	.  reduce 244 (src line 1713)
 
 
 state 376
 	arg_type:  sym dotdotdot.    (245)
 
-	.  reduce 245 (src line 1689)
+	.  reduce 245 (src line 1719)
 
 
 state 377
@@ -6495,7 +6495,7 @@ state 378
 state 379
 	non_dcl_stmt:  labelname ':' $$261 stmt.    (262)
 
-	.  reduce 262 (src line 1745)
+	.  reduce 262 (src line 1775)
 
 
 state 380
@@ -6542,7 +6542,7 @@ state 383
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 294 (src line 1911)
+	.  reduce 294 (src line 1941)
 
 	sym  goto 123
 	expr  goto 48
@@ -6728,7 +6728,7 @@ state 388
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 294 (src line 1911)
+	.  reduce 294 (src line 1941)
 
 	sym  goto 123
 	expr  goto 48
@@ -6782,7 +6782,7 @@ state 392
 	ocomma: .    (288)
 
 	','  shift 413
-	.  reduce 288 (src line 1896)
+	.  reduce 288 (src line 1926)
 
 	ocomma  goto 510
 
@@ -6809,7 +6809,7 @@ state 393
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 289 (src line 1897)
+	.  reduce 289 (src line 1927)
 
 	sym  goto 123
 	expr  goto 173
@@ -6875,7 +6875,7 @@ state 397
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 290 (src line 1899)
+	.  reduce 290 (src line 1929)
 
 	sym  goto 123
 	expr  goto 188
@@ -6909,20 +6909,20 @@ state 399
 	ocomma: .    (288)
 
 	','  shift 516
-	.  reduce 288 (src line 1896)
+	.  reduce 288 (src line 1926)
 
 	ocomma  goto 517
 
 state 400
 	keyval_list:  keyval.    (280)
 
-	.  reduce 280 (src line 1863)
+	.  reduce 280 (src line 1893)
 
 
 state 401
 	keyval_list:  bare_complitexpr.    (281)
 
-	.  reduce 281 (src line 1868)
+	.  reduce 281 (src line 1898)
 
 
 state 402
@@ -7105,7 +7105,7 @@ state 412
 state 413
 	ocomma:  ','.    (289)
 
-	.  reduce 289 (src line 1897)
+	.  reduce 289 (src line 1927)
 
 
 state 414
@@ -7118,7 +7118,7 @@ state 414
 state 415
 	fnliteral:  fnlitdcl lbrace stmt_list '}'.    (216)
 
-	.  reduce 216 (src line 1490)
+	.  reduce 216 (src line 1520)
 
 
 state 416
@@ -7128,11 +7128,11 @@ state 416
 	error  shift 307
 	LLITERAL  shift 68
 	LBREAK  shift 41
-	LCASE  reduce 251 (src line 1719)
+	LCASE  reduce 251 (src line 1749)
 	LCHAN  shift 78
 	LCONST  shift 47
 	LCONTINUE  shift 42
-	LDEFAULT  reduce 251 (src line 1719)
+	LDEFAULT  reduce 251 (src line 1749)
 	LDEFER  shift 44
 	LFALL  shift 40
 	LFOR  shift 50
@@ -7156,9 +7156,9 @@ state 416
 	'*'  shift 58
 	'&'  shift 59
 	'('  shift 67
-	';'  reduce 251 (src line 1719)
+	';'  reduce 251 (src line 1749)
 	'{'  shift 308
-	'}'  reduce 251 (src line 1719)
+	'}'  reduce 251 (src line 1749)
 	'!'  shift 62
 	'~'  shift 63
 	'['  shift 77
@@ -7229,9 +7229,9 @@ state 417
 	'*'  shift 58
 	'&'  shift 59
 	'('  shift 67
-	';'  reduce 251 (src line 1719)
+	';'  reduce 251 (src line 1749)
 	'{'  shift 308
-	'}'  reduce 251 (src line 1719)
+	'}'  reduce 251 (src line 1749)
 	'!'  shift 62
 	'~'  shift 63
 	'['  shift 77
@@ -7339,7 +7339,7 @@ state 424
 	'('  shift 321
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 287 (src line 1894)
+	.  reduce 287 (src line 1924)
 
 	sym  goto 119
 	packname  goto 324
@@ -7354,7 +7354,7 @@ state 425
 	oliteral: .    (302)
 
 	LLITERAL  shift 428
-	.  reduce 302 (src line 1935)
+	.  reduce 302 (src line 1965)
 
 	oliteral  goto 529
 
@@ -7373,13 +7373,13 @@ state 426
 state 427
 	structdcl:  embed oliteral.    (231)
 
-	.  reduce 231 (src line 1589)
+	.  reduce 231 (src line 1619)
 
 
 state 428
 	oliteral:  LLITERAL.    (303)
 
-	.  reduce 303 (src line 1939)
+	.  reduce 303 (src line 1969)
 
 
 state 429
@@ -7403,7 +7403,7 @@ state 431
 	packname:  LNAME.'.' sym 
 
 	'.'  shift 434
-	.  reduce 236 (src line 1621)
+	.  reduce 236 (src line 1651)
 
 
 state 432
@@ -7411,7 +7411,7 @@ state 432
 	oliteral: .    (302)
 
 	LLITERAL  shift 428
-	.  reduce 302 (src line 1935)
+	.  reduce 302 (src line 1965)
 
 	oliteral  goto 533
 
@@ -7450,7 +7450,7 @@ state 436
 	'('  shift 331
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 287 (src line 1894)
+	.  reduce 287 (src line 1924)
 
 	sym  goto 119
 	packname  goto 330
@@ -7461,7 +7461,7 @@ state 436
 state 437
 	interfacedcl:  new_name indcl.    (239)
 
-	.  reduce 239 (src line 1652)
+	.  reduce 239 (src line 1682)
 
 
 state 438
@@ -7481,7 +7481,7 @@ state 438
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 249 (src line 1707)
+	.  reduce 249 (src line 1737)
 
 	sym  goto 247
 	ntype  goto 249
@@ -7522,13 +7522,13 @@ state 441
 state 442
 	hidden_import:  LIMPORT LNAME LLITERAL ';'.    (304)
 
-	.  reduce 304 (src line 1944)
+	.  reduce 304 (src line 1974)
 
 
 state 443
 	hidden_import:  LVAR hidden_pkg_importsym hidden_type ';'.    (305)
 
-	.  reduce 305 (src line 1949)
+	.  reduce 305 (src line 1979)
 
 
 state 444
@@ -7587,7 +7587,7 @@ state 447
 	LNAME  shift 10
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 298 (src line 1923)
+	.  reduce 298 (src line 1953)
 
 	sym  goto 546
 	hidden_importsym  goto 11
@@ -7610,7 +7610,7 @@ state 448
 	'['  shift 342
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 300 (src line 1929)
+	.  reduce 300 (src line 1959)
 
 	sym  goto 550
 	hidden_importsym  goto 553
@@ -7625,13 +7625,13 @@ state 448
 state 449
 	hidden_type_misc:  '*' hidden_type.    (324)
 
-	.  reduce 324 (src line 2048)
+	.  reduce 324 (src line 2078)
 
 
 state 450
 	hidden_type_misc:  LCHAN hidden_type_non_recv_chan.    (325)
 
-	.  reduce 325 (src line 2052)
+	.  reduce 325 (src line 2082)
 
 
 state 451
@@ -7666,13 +7666,13 @@ state 452
 state 453
 	hidden_type_non_recv_chan:  hidden_type_misc.    (315)
 
-	.  reduce 315 (src line 2008)
+	.  reduce 315 (src line 2038)
 
 
 state 454
 	hidden_type_non_recv_chan:  hidden_type_func.    (316)
 
-	.  reduce 316 (src line 2010)
+	.  reduce 316 (src line 2040)
 
 
 state 455
@@ -7703,7 +7703,7 @@ state 456
 	LNAME  shift 10
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 296 (src line 1917)
+	.  reduce 296 (src line 1947)
 
 	sym  goto 357
 	hidden_importsym  goto 11
@@ -7721,7 +7721,7 @@ state 457
 state 458
 	hidden_constant:  hidden_literal.    (342)
 
-	.  reduce 342 (src line 2195)
+	.  reduce 342 (src line 2225)
 
 
 state 459
@@ -7741,7 +7741,7 @@ state 459
 state 460
 	hidden_literal:  LLITERAL.    (339)
 
-	.  reduce 339 (src line 2164)
+	.  reduce 339 (src line 2194)
 
 
 state 461
@@ -7754,7 +7754,7 @@ state 461
 state 462
 	hidden_literal:  sym.    (341)
 
-	.  reduce 341 (src line 2187)
+	.  reduce 341 (src line 2217)
 
 
 state 463
@@ -7776,13 +7776,13 @@ state 463
 state 464
 	hidden_import:  LTYPE hidden_pkgtype hidden_type ';'.    (308)
 
-	.  reduce 308 (src line 1961)
+	.  reduce 308 (src line 1991)
 
 
 state 465
 	hidden_import:  LFUNC hidden_fndcl fnbody ';'.    (309)
 
-	.  reduce 309 (src line 1965)
+	.  reduce 309 (src line 1995)
 
 
 state 466
@@ -7797,7 +7797,7 @@ state 467
 	hidden_funarg_list:  hidden_funarg_list.',' hidden_funarg 
 
 	','  shift 469
-	.  reduce 297 (src line 1921)
+	.  reduce 297 (src line 1951)
 
 
 state 468
@@ -7828,7 +7828,7 @@ state 470
 	oliteral: .    (302)
 
 	LLITERAL  shift 428
-	.  reduce 302 (src line 1935)
+	.  reduce 302 (src line 1965)
 
 	oliteral  goto 565
 
@@ -7862,7 +7862,7 @@ state 472
 state 473
 	vardcl_list:  vardcl_list ';' vardcl.    (221)
 
-	.  reduce 221 (src line 1525)
+	.  reduce 221 (src line 1555)
 
 
 state 474
@@ -7891,14 +7891,14 @@ state 477
 	osemi: .    (286)
 
 	';'  shift 568
-	.  reduce 286 (src line 1893)
+	.  reduce 286 (src line 1923)
 
 	osemi  goto 567
 
 state 478
 	constdcl_list:  constdcl1.    (222)
 
-	.  reduce 222 (src line 1530)
+	.  reduce 222 (src line 1560)
 
 
 state 479
@@ -7959,13 +7959,13 @@ state 482
 state 483
 	typedcl_list:  typedcl_list ';' typedcl.    (225)
 
-	.  reduce 225 (src line 1542)
+	.  reduce 225 (src line 1572)
 
 
 state 484
 	fnbody:  '{' stmt_list '}'.    (211)
 
-	.  reduce 211 (src line 1461)
+	.  reduce 211 (src line 1491)
 
 
 state 485
@@ -7979,13 +7979,13 @@ state 485
 state 486
 	fntype:  LFUNC '(' oarg_type_list_ocomma ')' fnres.    (209)
 
-	.  reduce 209 (src line 1448)
+	.  reduce 209 (src line 1478)
 
 
 state 487
 	fnres:  fnret_type.    (213)
 
-	.  reduce 213 (src line 1474)
+	.  reduce 213 (src line 1504)
 
 
 state 488
@@ -8005,7 +8005,7 @@ state 488
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 249 (src line 1707)
+	.  reduce 249 (src line 1737)
 
 	sym  goto 247
 	ntype  goto 249
@@ -8057,7 +8057,7 @@ state 493
 state 494
 	arg_type_list:  arg_type_list ',' arg_type.    (248)
 
-	.  reduce 248 (src line 1702)
+	.  reduce 248 (src line 1732)
 
 
 state 495
@@ -8076,7 +8076,7 @@ state 495
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 212 (src line 1469)
+	.  reduce 212 (src line 1499)
 
 	sym  goto 123
 	dotname  goto 493
@@ -8107,7 +8107,7 @@ state 496
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 212 (src line 1469)
+	.  reduce 212 (src line 1499)
 
 	sym  goto 123
 	dotname  goto 493
@@ -8155,9 +8155,9 @@ state 497
 	'*'  shift 58
 	'&'  shift 59
 	'('  shift 67
-	';'  reduce 251 (src line 1719)
+	';'  reduce 251 (src line 1749)
 	'{'  shift 308
-	'}'  reduce 251 (src line 1719)
+	'}'  reduce 251 (src line 1749)
 	'!'  shift 62
 	'~'  shift 63
 	'['  shift 77
@@ -8397,7 +8397,7 @@ state 510
 state 511
 	expr_or_type_list:  expr_or_type_list ',' expr_or_type.    (279)
 
-	.  reduce 279 (src line 1855)
+	.  reduce 279 (src line 1885)
 
 
 state 512
@@ -8452,7 +8452,7 @@ state 516
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 289 (src line 1897)
+	.  reduce 289 (src line 1927)
 
 	sym  goto 123
 	expr  goto 402
@@ -8476,7 +8476,7 @@ state 516
 state 517
 	braced_keyval_list:  keyval_list ocomma.    (285)
 
-	.  reduce 285 (src line 1885)
+	.  reduce 285 (src line 1915)
 
 
 state 518
@@ -8546,7 +8546,7 @@ state 519
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 284 (src line 1881)
+	.  reduce 284 (src line 1911)
 
 	sym  goto 123
 	expr  goto 402
@@ -8593,7 +8593,7 @@ state 520
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 284 (src line 1881)
+	.  reduce 284 (src line 1911)
 
 	sym  goto 123
 	expr  goto 402
@@ -8639,7 +8639,7 @@ state 523
 state 524
 	stmt_list:  stmt_list ';' stmt.    (271)
 
-	.  reduce 271 (src line 1812)
+	.  reduce 271 (src line 1842)
 
 
 state 525
@@ -8666,19 +8666,19 @@ state 527
 state 528
 	structdcl_list:  structdcl_list ';' structdcl.    (227)
 
-	.  reduce 227 (src line 1549)
+	.  reduce 227 (src line 1579)
 
 
 state 529
 	structdcl:  new_name_list ntype oliteral.    (230)
 
-	.  reduce 230 (src line 1564)
+	.  reduce 230 (src line 1594)
 
 
 state 530
 	new_name_list:  new_name_list ',' new_name.    (273)
 
-	.  reduce 273 (src line 1825)
+	.  reduce 273 (src line 1855)
 
 
 state 531
@@ -8686,7 +8686,7 @@ state 531
 	oliteral: .    (302)
 
 	LLITERAL  shift 428
-	.  reduce 302 (src line 1935)
+	.  reduce 302 (src line 1965)
 
 	oliteral  goto 594
 
@@ -8700,7 +8700,7 @@ state 532
 state 533
 	structdcl:  '*' embed oliteral.    (233)
 
-	.  reduce 233 (src line 1600)
+	.  reduce 233 (src line 1630)
 
 
 state 534
@@ -8713,7 +8713,7 @@ state 534
 state 535
 	packname:  LNAME '.' sym.    (237)
 
-	.  reduce 237 (src line 1632)
+	.  reduce 237 (src line 1662)
 
 
 state 536
@@ -8725,7 +8725,7 @@ state 536
 state 537
 	interfacedcl_list:  interfacedcl_list ';' interfacedcl.    (229)
 
-	.  reduce 229 (src line 1559)
+	.  reduce 229 (src line 1589)
 
 
 state 538
@@ -8738,13 +8738,13 @@ state 538
 state 539
 	interfacedcl:  '(' packname ')'.    (241)
 
-	.  reduce 241 (src line 1662)
+	.  reduce 241 (src line 1692)
 
 
 state 540
 	hidden_type_misc:  '[' ']' hidden_type.    (319)
 
-	.  reduce 319 (src line 2028)
+	.  reduce 319 (src line 2058)
 
 
 state 541
@@ -8787,13 +8787,13 @@ state 544
 	hidden_structdcl_list:  hidden_structdcl_list.';' hidden_structdcl 
 
 	';'  shift 601
-	.  reduce 299 (src line 1927)
+	.  reduce 299 (src line 1957)
 
 
 state 545
 	hidden_structdcl_list:  hidden_structdcl.    (348)
 
-	.  reduce 348 (src line 2222)
+	.  reduce 348 (src line 2252)
 
 
 state 546
@@ -8829,13 +8829,13 @@ state 548
 	hidden_interfacedcl_list:  hidden_interfacedcl_list.';' hidden_interfacedcl 
 
 	';'  shift 604
-	.  reduce 301 (src line 1933)
+	.  reduce 301 (src line 1963)
 
 
 state 549
 	hidden_interfacedcl_list:  hidden_interfacedcl.    (350)
 
-	.  reduce 350 (src line 2232)
+	.  reduce 350 (src line 2262)
 
 
 state 550
@@ -8848,7 +8848,7 @@ state 550
 state 551
 	hidden_interfacedcl:  hidden_type.    (334)
 
-	.  reduce 334 (src line 2139)
+	.  reduce 334 (src line 2169)
 
 
 state 552
@@ -8856,7 +8856,7 @@ state 552
 	hidden_type_misc:  LNAME.    (318)
 
 	'('  reduce 157 (src line 1113)
-	.  reduce 318 (src line 2017)
+	.  reduce 318 (src line 2047)
 
 
 state 553
@@ -8864,7 +8864,7 @@ state 553
 	hidden_type_misc:  hidden_importsym.    (317)
 
 	'('  reduce 158 (src line 1122)
-	.  reduce 317 (src line 2012)
+	.  reduce 317 (src line 2042)
 
 
 state 554
@@ -8877,13 +8877,13 @@ state 554
 state 555
 	hidden_type_misc:  LCHAN LCOMM hidden_type.    (327)
 
-	.  reduce 327 (src line 2064)
+	.  reduce 327 (src line 2094)
 
 
 state 556
 	hidden_type_recv_chan:  LCOMM LCHAN hidden_type.    (328)
 
-	.  reduce 328 (src line 2071)
+	.  reduce 328 (src line 2101)
 
 
 state 557
@@ -8896,7 +8896,7 @@ state 557
 state 558
 	hidden_import:  LCONST hidden_pkg_importsym '=' hidden_constant ';'.    (306)
 
-	.  reduce 306 (src line 1953)
+	.  reduce 306 (src line 1983)
 
 
 state 559
@@ -8909,7 +8909,7 @@ state 559
 state 560
 	hidden_literal:  '-' LLITERAL.    (340)
 
-	.  reduce 340 (src line 2169)
+	.  reduce 340 (src line 2199)
 
 
 state 561
@@ -8934,7 +8934,7 @@ state 562
 	'('  shift 612
 	'['  shift 342
 	'@'  shift 13
-	.  reduce 335 (src line 2144)
+	.  reduce 335 (src line 2174)
 
 	hidden_importsym  goto 340
 	hidden_funres  goto 611
@@ -8954,13 +8954,13 @@ state 563
 state 564
 	hidden_funarg_list:  hidden_funarg_list ',' hidden_funarg.    (347)
 
-	.  reduce 347 (src line 2217)
+	.  reduce 347 (src line 2247)
 
 
 state 565
 	hidden_funarg:  sym hidden_type oliteral.    (330)
 
-	.  reduce 330 (src line 2085)
+	.  reduce 330 (src line 2115)
 
 
 state 566
@@ -8968,7 +8968,7 @@ state 566
 	oliteral: .    (302)
 
 	LLITERAL  shift 428
-	.  reduce 302 (src line 1935)
+	.  reduce 302 (src line 1965)
 
 	oliteral  goto 615
 
@@ -8986,7 +8986,7 @@ state 568
 	LNAME  shift 10
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 287 (src line 1894)
+	.  reduce 287 (src line 1924)
 
 	sym  goto 105
 	dcl_name  goto 104
@@ -9020,7 +9020,7 @@ state 570
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 249 (src line 1707)
+	.  reduce 249 (src line 1737)
 
 	sym  goto 247
 	ntype  goto 249
@@ -9084,7 +9084,7 @@ state 574
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 294 (src line 1911)
+	.  reduce 294 (src line 1941)
 
 	sym  goto 123
 	expr  goto 48
@@ -9217,11 +9217,11 @@ state 578
 	error  shift 307
 	LLITERAL  shift 68
 	LBREAK  shift 41
-	LCASE  reduce 251 (src line 1719)
+	LCASE  reduce 251 (src line 1749)
 	LCHAN  shift 78
 	LCONST  shift 47
 	LCONTINUE  shift 42
-	LDEFAULT  reduce 251 (src line 1719)
+	LDEFAULT  reduce 251 (src line 1749)
 	LDEFER  shift 44
 	LFALL  shift 40
 	LFOR  shift 50
@@ -9245,9 +9245,9 @@ state 578
 	'*'  shift 58
 	'&'  shift 59
 	'('  shift 67
-	';'  reduce 251 (src line 1719)
+	';'  reduce 251 (src line 1749)
 	'{'  shift 308
-	'}'  reduce 251 (src line 1719)
+	'}'  reduce 251 (src line 1749)
 	'!'  shift 62
 	'~'  shift 63
 	'['  shift 77
@@ -9348,7 +9348,7 @@ state 584
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 290 (src line 1899)
+	.  reduce 290 (src line 1929)
 
 	sym  goto 123
 	expr  goto 188
@@ -9371,13 +9371,13 @@ state 584
 state 585
 	keyval_list:  keyval_list ',' keyval.    (282)
 
-	.  reduce 282 (src line 1872)
+	.  reduce 282 (src line 1902)
 
 
 state 586
 	keyval_list:  keyval_list ',' bare_complitexpr.    (283)
 
-	.  reduce 283 (src line 1876)
+	.  reduce 283 (src line 1906)
 
 
 state 587
@@ -9473,7 +9473,7 @@ state 593
 state 594
 	structdcl:  '(' embed ')' oliteral.    (232)
 
-	.  reduce 232 (src line 1594)
+	.  reduce 232 (src line 1624)
 
 
 state 595
@@ -9481,7 +9481,7 @@ state 595
 	oliteral: .    (302)
 
 	LLITERAL  shift 428
-	.  reduce 302 (src line 1935)
+	.  reduce 302 (src line 1965)
 
 	oliteral  goto 633
 
@@ -9490,7 +9490,7 @@ state 596
 	oliteral: .    (302)
 
 	LLITERAL  shift 428
-	.  reduce 302 (src line 1935)
+	.  reduce 302 (src line 1965)
 
 	oliteral  goto 634
 
@@ -9510,7 +9510,7 @@ state 597
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 212 (src line 1469)
+	.  reduce 212 (src line 1499)
 
 	sym  goto 123
 	dotname  goto 493
@@ -9528,7 +9528,7 @@ state 597
 state 598
 	hidden_type_misc:  '[' LLITERAL ']' hidden_type.    (320)
 
-	.  reduce 320 (src line 2032)
+	.  reduce 320 (src line 2062)
 
 
 state 599
@@ -9555,7 +9555,7 @@ state 599
 state 600
 	hidden_type_misc:  LSTRUCT '{' ohidden_structdcl_list '}'.    (322)
 
-	.  reduce 322 (src line 2040)
+	.  reduce 322 (src line 2070)
 
 
 state 601
@@ -9575,14 +9575,14 @@ state 602
 	oliteral: .    (302)
 
 	LLITERAL  shift 428
-	.  reduce 302 (src line 1935)
+	.  reduce 302 (src line 1965)
 
 	oliteral  goto 638
 
 state 603
 	hidden_type_misc:  LINTERFACE '{' ohidden_interfacedcl_list '}'.    (323)
 
-	.  reduce 323 (src line 2044)
+	.  reduce 323 (src line 2074)
 
 
 state 604
@@ -9616,7 +9616,7 @@ state 605
 	LNAME  shift 10
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 296 (src line 1917)
+	.  reduce 296 (src line 1947)
 
 	sym  goto 357
 	hidden_importsym  goto 11
@@ -9627,7 +9627,7 @@ state 605
 state 606
 	hidden_type_misc:  LCHAN '(' hidden_type_recv_chan ')'.    (326)
 
-	.  reduce 326 (src line 2058)
+	.  reduce 326 (src line 2088)
 
 
 state 607
@@ -9645,7 +9645,7 @@ state 607
 	'('  shift 612
 	'['  shift 342
 	'@'  shift 13
-	.  reduce 335 (src line 2144)
+	.  reduce 335 (src line 2174)
 
 	hidden_importsym  goto 340
 	hidden_funres  goto 611
@@ -9672,19 +9672,19 @@ state 608
 state 609
 	hidden_import:  LCONST hidden_pkg_importsym hidden_type '=' hidden_constant ';'.    (307)
 
-	.  reduce 307 (src line 1957)
+	.  reduce 307 (src line 1987)
 
 
 state 610
 	hidden_fndcl:  hidden_pkg_importsym '(' ohidden_funarg_list ')' ohidden_funres.    (207)
 
-	.  reduce 207 (src line 1405)
+	.  reduce 207 (src line 1435)
 
 
 state 611
 	ohidden_funres:  hidden_funres.    (336)
 
-	.  reduce 336 (src line 2148)
+	.  reduce 336 (src line 2178)
 
 
 state 612
@@ -9694,7 +9694,7 @@ state 612
 	LNAME  shift 10
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 296 (src line 1917)
+	.  reduce 296 (src line 1947)
 
 	sym  goto 357
 	hidden_importsym  goto 11
@@ -9705,7 +9705,7 @@ state 612
 state 613
 	hidden_funres:  hidden_type.    (338)
 
-	.  reduce 338 (src line 2155)
+	.  reduce 338 (src line 2185)
 
 
 state 614
@@ -9715,7 +9715,7 @@ state 614
 	LNAME  shift 10
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 296 (src line 1917)
+	.  reduce 296 (src line 1947)
 
 	sym  goto 357
 	hidden_importsym  goto 11
@@ -9726,7 +9726,7 @@ state 614
 state 615
 	hidden_funarg:  sym LDDD hidden_type oliteral.    (331)
 
-	.  reduce 331 (src line 2094)
+	.  reduce 331 (src line 2124)
 
 
 state 616
@@ -9738,7 +9738,7 @@ state 616
 state 617
 	constdcl_list:  constdcl_list ';' constdcl1.    (223)
 
-	.  reduce 223 (src line 1532)
+	.  reduce 223 (src line 1562)
 
 
 state 618
@@ -9751,7 +9751,7 @@ state 618
 state 619
 	fnres:  '(' oarg_type_list_ocomma ')'.    (214)
 
-	.  reduce 214 (src line 1478)
+	.  reduce 214 (src line 1508)
 
 
 state 620
@@ -9954,7 +9954,7 @@ state 630
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 284 (src line 1881)
+	.  reduce 284 (src line 1911)
 
 	sym  goto 123
 	expr  goto 402
@@ -9992,43 +9992,43 @@ state 632
 state 633
 	structdcl:  '(' '*' embed ')' oliteral.    (234)
 
-	.  reduce 234 (src line 1606)
+	.  reduce 234 (src line 1636)
 
 
 state 634
 	structdcl:  '*' '(' embed ')' oliteral.    (235)
 
-	.  reduce 235 (src line 1613)
+	.  reduce 235 (src line 1643)
 
 
 state 635
 	indcl:  '(' oarg_type_list_ocomma ')' fnres.    (242)
 
-	.  reduce 242 (src line 1668)
+	.  reduce 242 (src line 1698)
 
 
 state 636
 	hidden_type_misc:  LMAP '[' hidden_type ']' hidden_type.    (321)
 
-	.  reduce 321 (src line 2036)
+	.  reduce 321 (src line 2066)
 
 
 state 637
 	hidden_structdcl_list:  hidden_structdcl_list ';' hidden_structdcl.    (349)
 
-	.  reduce 349 (src line 2227)
+	.  reduce 349 (src line 2257)
 
 
 state 638
 	hidden_structdcl:  sym hidden_type oliteral.    (332)
 
-	.  reduce 332 (src line 2110)
+	.  reduce 332 (src line 2140)
 
 
 state 639
 	hidden_interfacedcl_list:  hidden_interfacedcl_list ';' hidden_interfacedcl.    (351)
 
-	.  reduce 351 (src line 2237)
+	.  reduce 351 (src line 2267)
 
 
 state 640
@@ -10041,7 +10041,7 @@ state 640
 state 641
 	hidden_type_func:  LFUNC '(' ohidden_funarg_list ')' ohidden_funres.    (329)
 
-	.  reduce 329 (src line 2079)
+	.  reduce 329 (src line 2109)
 
 
 state 642
@@ -10081,7 +10081,7 @@ state 645
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 212 (src line 1469)
+	.  reduce 212 (src line 1499)
 
 	sym  goto 123
 	dotname  goto 493
@@ -10240,7 +10240,7 @@ state 653
 	'('  shift 612
 	'['  shift 342
 	'@'  shift 13
-	.  reduce 335 (src line 2144)
+	.  reduce 335 (src line 2174)
 
 	hidden_importsym  goto 340
 	hidden_funres  goto 611
@@ -10253,13 +10253,13 @@ state 653
 state 654
 	hidden_constant:  '(' hidden_literal '+' hidden_literal ')'.    (343)
 
-	.  reduce 343 (src line 2197)
+	.  reduce 343 (src line 2227)
 
 
 state 655
 	hidden_funres:  '(' ohidden_funarg_list ')'.    (337)
 
-	.  reduce 337 (src line 2150)
+	.  reduce 337 (src line 2180)
 
 
 state 656
@@ -10277,7 +10277,7 @@ state 656
 	'('  shift 612
 	'['  shift 342
 	'@'  shift 13
-	.  reduce 335 (src line 2144)
+	.  reduce 335 (src line 2174)
 
 	hidden_importsym  goto 340
 	hidden_funres  goto 611
@@ -10290,7 +10290,7 @@ state 656
 state 657
 	fndcl:  '(' oarg_type_list_ocomma ')' sym '(' oarg_type_list_ocomma ')' fnres.    (206)
 
-	.  reduce 206 (src line 1368)
+	.  reduce 206 (src line 1398)
 
 
 state 658
@@ -10328,13 +10328,13 @@ state 662
 state 663
 	hidden_interfacedcl:  sym '(' ohidden_funarg_list ')' ohidden_funres.    (333)
 
-	.  reduce 333 (src line 2134)
+	.  reduce 333 (src line 2164)
 
 
 state 664
 	hidden_fndcl:  '(' hidden_funarg_list ')' sym '(' ohidden_funarg_list ')' ohidden_funres.    (208)
 
-	.  reduce 208 (src line 1431)
+	.  reduce 208 (src line 1461)
 
 
 state 665
@@ -10360,7 +10360,7 @@ state 665
 	'['  shift 77
 	'?'  shift 12
 	'@'  shift 13
-	.  reduce 294 (src line 1911)
+	.  reduce 294 (src line 1941)
 
 	sym  goto 123
 	expr  goto 48

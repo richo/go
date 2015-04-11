@@ -488,7 +488,7 @@ case:
 				nn = newname(n.Sym);
 				declare(nn, dclcontext);
 				$$.Nname = nn;
-	
+
 				// keep track of the instances for reporting unused
 				nn.Defn = typesw.Right;
 			}
@@ -534,7 +534,7 @@ case:
 				nn = newname(n.Sym);
 				declare(nn, dclcontext);
 				$$.Nname = nn;
-	
+
 				// keep track of the instances for reporting unused
 				nn.Defn = typesw.Right;
 			}
@@ -572,7 +572,7 @@ caseblock:
 	{
 		// This is the only place in the language where a statement
 		// list is not allowed to drop the final semicolon, because
-		// it's the only place where a statement list is not followed 
+		// it's the only place where a statement list is not followed
 		// by a closing brace.  Handle the error for pedantry.
 
 		// Find the final token of the statement list.
@@ -718,7 +718,7 @@ if_stmt:
 	}
 
 elseif:
-	LELSE LIF 
+	LELSE LIF
 	{
 		markdcl();
 	}
@@ -1056,7 +1056,7 @@ pexpr:
 |	'(' expr_or_type ')'
 	{
 		$$ = $2;
-		
+
 		// Need to know on lhs of := whether there are ( ).
 		// Don't bother with the OPAREN in other cases:
 		// it's just a waste of memory and time.
@@ -1335,36 +1335,36 @@ xfndcl:
 
 fndcl:
  /* 1   2   3   4   5   6                     7   8 */
-	'<' sym '>' sym '(' oarg_type_list_ocomma ')' fnres
-	{
-		Node *t;
+	/* LLT sym LGT sym '(' oarg_type_list_ocomma ')' fnres */
+	/* { */
+	/* 	Node *t; */
 
-		$$ = N;
-		$6 = checkarglist($6, 1);
+	/* 	$$ = N; */
+	/* 	$6 = checkarglist($6, 1); */
 
-		if(strcmp($4->name, "init") == 0) {
-			$4 = renameinit();
-			if($6 != nil || $8 != nil)
-				yyerror("func init must have no arguments and no return values lolol richo");
-		}
-		if(strcmp(localpkg->name, "main") == 0 && strcmp($4->name, "main") == 0) {
-			if($6 != nil || $8 != nil)
-				yyerror("func main must have no arguments and no return values srsly ducks");
-		}
+	/* 	if(strcmp($4->name, "init") == 0) { */
+	/* 		$4 = renameinit(); */
+	/* 		if($6 != nil || $8 != nil) */
+	/* 			yyerror("func init must have no arguments and no return values lolol richo"); */
+	/* 	} */
+	/* 	if(strcmp(localpkg->name, "main") == 0 && strcmp($4->name, "main") == 0) { */
+	/* 		if($6 != nil || $8 != nil) */
+	/* 			yyerror("func main must have no arguments and no return values srsly ducks"); */
+	/* 	} */
 
-		t = nod(OTFUNC, N, N);
-		t->list = $6;
-		t->rlist = $8;
+	/* 	t = nod(OTFUNC, N, N); */
+	/* 	t->list = $6; */
+	/* 	t->rlist = $8; */
 
-		$$ = nod(ODCLFUNC, N, N);
-		$$->nname = newname($4);
-		$$->nname->defn = $$;
-		$$->nname->ntype = t;		// TODO: check if nname already has an ntype
-		declare($$->nname, PFUNC);
+	/* 	$$ = nod(ODCLFUNC, N, N); */
+	/* 	$$->nname = newname($4); */
+	/* 	$$->nname->defn = $$; */
+	/* 	$$->nname->ntype = t;		// TODO: check if nname already has an ntype */
+	/* 	declare($$->nname, PFUNC); */
 
-		funchdr($$);
-	}
-|   sym '(' oarg_type_list_ocomma ')' fnres
+	/* 	funchdr($$); */
+	/* } */
+sym '(' oarg_type_list_ocomma ')' fnres
 	{
 		var t *Node
 
@@ -1460,14 +1460,14 @@ hidden_fndcl:
 	}
 |	'(' hidden_funarg_list ')' sym '(' ohidden_funarg_list ')' ohidden_funres
 	{
-		$$ = methodname1(newname($4), $2.N.Right); 
+		$$ = methodname1(newname($4), $2.N.Right);
 		$$.Type = functype($2.N, $6, $8);
 
 		checkwidth($$.Type);
 		addmethod($4, $$.Type, false, nointerface);
 		nointerface = false
 		funchdr($$);
-		
+
 		// inl.C's inlnode in on a dotmeth node expects to find the inlineable body as
 		// (dotmeth's type).Nname.Inl, and dotmeth's type has been pulled
 		// out by typecheck's lookdot as this $$.ttype.  So by providing
@@ -2124,7 +2124,7 @@ hidden_funarg:
 |	sym LDDD hidden_type oliteral
 	{
 		var t *Type
-	
+
 		t = typ(TARRAY);
 		t.Bound = -1;
 		t.Type = $3;
