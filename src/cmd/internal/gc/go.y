@@ -1334,7 +1334,37 @@ xfndcl:
 	}
 
 fndcl:
-	sym '(' oarg_type_list_ocomma ')' fnres
+ /* 1   2   3   4   5   6                     7   8 */
+	'<' sym '>' sym '(' oarg_type_list_ocomma ')' fnres
+	{
+		Node *t;
+
+		$$ = N;
+		$6 = checkarglist($6, 1);
+
+		if(strcmp($4->name, "init") == 0) {
+			$4 = renameinit();
+			if($6 != nil || $8 != nil)
+				yyerror("func init must have no arguments and no return values lolol richo");
+		}
+		if(strcmp(localpkg->name, "main") == 0 && strcmp($4->name, "main") == 0) {
+			if($6 != nil || $8 != nil)
+				yyerror("func main must have no arguments and no return values srsly ducks");
+		}
+
+		t = nod(OTFUNC, N, N);
+		t->list = $6;
+		t->rlist = $8;
+
+		$$ = nod(ODCLFUNC, N, N);
+		$$->nname = newname($4);
+		$$->nname->defn = $$;
+		$$->nname->ntype = t;		// TODO: check if nname already has an ntype
+		declare($$->nname, PFUNC);
+
+		funchdr($$);
+	}
+|   sym '(' oarg_type_list_ocomma ')' fnres
 	{
 		var t *Node
 
