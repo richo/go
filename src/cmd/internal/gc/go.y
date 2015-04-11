@@ -1335,36 +1335,36 @@ xfndcl:
 
 fndcl:
  /* 1   2   3   4   5   6                     7   8 */
-	/* LLT sym LGT sym '(' oarg_type_list_ocomma ')' fnres */
-	/* { */
-	/* 	Node *t; */
+	LLT sym LGT sym '(' oarg_type_list_ocomma ')' fnres
+	{
+		Node *t;
 
-	/* 	$$ = N; */
-	/* 	$6 = checkarglist($6, 1); */
+		$$ = N;
+		$6 = checkarglist($6, 1);
 
-	/* 	if(strcmp($4->name, "init") == 0) { */
-	/* 		$4 = renameinit(); */
-	/* 		if($6 != nil || $8 != nil) */
-	/* 			yyerror("func init must have no arguments and no return values lolol richo"); */
-	/* 	} */
-	/* 	if(strcmp(localpkg->name, "main") == 0 && strcmp($4->name, "main") == 0) { */
-	/* 		if($6 != nil || $8 != nil) */
-	/* 			yyerror("func main must have no arguments and no return values srsly ducks"); */
-	/* 	} */
+		if(strcmp($4->name, "init") == 0) {
+			$4 = renameinit();
+			if($6 != nil || $8 != nil)
+				yyerror("func init must have no arguments and no return values lolol richo");
+		}
+		if(strcmp(localpkg->name, "main") == 0 && strcmp($4->name, "main") == 0) {
+			if($6 != nil || $8 != nil)
+				yyerror("func main must have no arguments and no return values srsly ducks");
+		}
 
-	/* 	t = nod(OTFUNC, N, N); */
-	/* 	t->list = $6; */
-	/* 	t->rlist = $8; */
+		t = nod(OTFUNC, N, N);
+		t->list = $6;
+		t->rlist = $8;
 
-	/* 	$$ = nod(ODCLFUNC, N, N); */
-	/* 	$$->nname = newname($4); */
-	/* 	$$->nname->defn = $$; */
-	/* 	$$->nname->ntype = t;		// TODO: check if nname already has an ntype */
-	/* 	declare($$->nname, PFUNC); */
+		$$ = nod(ODCLFUNC, N, N);
+		$$->nname = newname($4);
+		$$->nname->defn = $$;
+		$$->nname->ntype = t;		// TODO: check if nname already has an ntype
+		declare($$->nname, PFUNC);
 
-	/* 	funchdr($$); */
-	/* } */
-sym '(' oarg_type_list_ocomma ')' fnres
+		funchdr($$);
+	}
+|   sym '(' oarg_type_list_ocomma ')' fnres
 	{
 		var t *Node
 

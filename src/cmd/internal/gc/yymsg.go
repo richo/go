@@ -18,22 +18,22 @@ var yymsg = []struct {
 	// is converted by yaccerrors.go into the yystate and yychar caused
 	// by that token list.
 
-	{332, ',',
+	{334, ',',
 		"unexpected comma during import block"},
 
 	{89, ';',
 		"missing import path; require quoted string"},
 
-	{390, ';',
+	{393, ';',
 		"missing { after if clause"},
 
-	{387, ';',
+	{390, ';',
 		"missing { after switch clause"},
 
-	{279, ';',
+	{281, ';',
 		"missing { after for clause"},
 
-	{498, LBODY,
+	{502, LBODY,
 		"missing { after for clause"},
 
 	{17, '{',
@@ -51,33 +51,33 @@ var yymsg = []struct {
 	{78, ',',
 		"unexpected comma in channel type"},
 
-	{416, LELSE,
+	{419, LELSE,
 		"unexpected semicolon or newline before else"},
 
-	{329, ',',
+	{331, ',',
 		"name list not allowed in interface type"},
 
-	{279, LVAR,
+	{281, LVAR,
 		"var declaration not allowed in for initializer"},
 
 	{25, '{',
 		"unexpected { at end of statement"},
 
-	{371, '{',
+	{373, '{',
 		"unexpected { at end of statement"},
 
-	{122, ';',
+	{123, ';',
 		"argument to go/defer must be function call"},
 
-	{398, ';',
+	{401, ';',
 		"need trailing comma before newline in composite literal"},
 
-	{414, ';',
+	{417, ';',
 		"need trailing comma before newline in composite literal"},
 
-	{124, LNAME,
+	{125, LNAME,
 		"nested func not allowed"},
 
-	{650, ';',
+	{657, ';',
 		"else must be followed by if or statement block"},
 }
