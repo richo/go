@@ -1337,30 +1337,32 @@ fndcl:
  /* 1   2   3   4   5   6                     7   8 */
 	LLT sym LGT sym '(' oarg_type_list_ocomma ')' fnres
 	{
-		Node *t;
+		var t *Node
 
-		$$ = N;
+		$$ = nil;
 		$6 = checkarglist($6, 1);
 
-		if(strcmp($4->name, "init") == 0) {
+		if $4.Name == "init" {
 			$4 = renameinit();
-			if($6 != nil || $8 != nil)
-				yyerror("func init must have no arguments and no return values lolol richo");
+			if $6 != nil || $8 != nil {
+				Yyerror("func init must have no arguments and no return values");
+			}
 		}
-		if(strcmp(localpkg->name, "main") == 0 && strcmp($4->name, "main") == 0) {
-			if($6 != nil || $8 != nil)
-				yyerror("func main must have no arguments and no return values srsly ducks");
+		if localpkg.Name == "main" && $4.Name == "main" {
+			if $6 != nil || $8 != nil {
+				Yyerror("func main must have no arguments and no return values");
+			}
 		}
 
-		t = nod(OTFUNC, N, N);
-		t->list = $6;
-		t->rlist = $8;
+		t = Nod(OTFUNC, nil, nil);
+		t.List = $6;
+		t.Rlist = $8;
 
-		$$ = nod(ODCLFUNC, N, N);
-		$$->nname = newname($4);
-		$$->nname->defn = $$;
-		$$->nname->ntype = t;		// TODO: check if nname already has an ntype
-		declare($$->nname, PFUNC);
+		$$ = Nod(ODCLFUNC, nil, nil);
+		$$.Nname = newfuncname($4);
+		$$.Nname.Defn = $$;
+		$$.Nname.Ntype = t;		// TODO: check if nname already has an ntype
+		declare($$.Nname, PFUNC);
 
 		funchdr($$);
 	}
