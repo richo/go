@@ -1340,6 +1340,7 @@ fndcl:
 		var t *Node
 
 		$$ = nil;
+
 		$6 = checkarglist($6, 1);
 
 		if $4.Name == "init" {
@@ -1357,6 +1358,7 @@ fndcl:
 		t = Nod(OTFUNC, nil, nil);
 		t.List = $6;
 		t.Rlist = $8;
+        t.Generic = $2.Name
 
 		$$ = Nod(ODCLFUNC, nil, nil);
 		$$.Nname = newfuncname($4);

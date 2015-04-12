@@ -60,6 +60,9 @@ type Node struct {
 	Orig  *Node // original form, for printing, and tracking copies of ONAMEs
 	Nname *Node
 
+	// Lol generics
+	Generic string
+
 	// func
 	Func *Func
 
