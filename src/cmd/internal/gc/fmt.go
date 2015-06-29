@@ -189,6 +189,7 @@ var classnames = []string{
 	"PPARAMOUT",
 	"PPARAMREF",
 	"PFUNC",
+	"PGENERICFUNC",
 }
 
 // Fmt "%J": Node details.

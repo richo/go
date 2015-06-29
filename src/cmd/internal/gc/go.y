@@ -1364,7 +1364,7 @@ fndcl:
 		$$.Nname = newfuncname($4);
 		$$.Nname.Defn = $$;
 		$$.Nname.Ntype = t;		// TODO: check if nname already has an ntype
-		declare($$.Nname, PFUNC);
+		declare($$.Nname, PGENERICFUNC);
 
 		funchdr($$);
 	}

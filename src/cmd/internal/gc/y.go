@@ -2537,7 +2537,7 @@ yydefault:
 			yyVAL.node.Nname = newfuncname(yyDollar[4].sym)
 			yyVAL.node.Nname.Defn = yyVAL.node
 			yyVAL.node.Nname.Ntype = t // TODO: check if nname already has an ntype
-			declare(yyVAL.node.Nname, PFUNC)
+			declare(yyVAL.node.Nname, PGENERICFUNC)
 
 			funchdr(yyVAL.node)
 		}

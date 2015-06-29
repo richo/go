@@ -324,13 +324,14 @@ const (
 
 // declaration context
 const (
-	Pxxx      = uint8(iota)
-	PEXTERN   // global variable
-	PAUTO     // local variables
-	PPARAM    // input arguments
-	PPARAMOUT // output results
-	PPARAMREF // closure variable reference
-	PFUNC     // global function
+	Pxxx         = uint8(iota)
+	PEXTERN      // global variable
+	PAUTO        // local variables
+	PPARAM       // input arguments
+	PPARAMOUT    // output results
+	PPARAMREF    // closure variable reference
+	PFUNC        // global function
+	PGENERICFUNC // generic function
 
 	PDISCARD // discard during parse of duplicate import
 
