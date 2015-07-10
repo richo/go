@@ -390,6 +390,13 @@ func Naddr(a *obj.Addr, n *Node) {
 			a.Type = obj.TYPE_ADDR
 			a.Width = int64(Widthptr)
 			s = funcsym(s)
+
+		case PGENERICFUNC:
+			// TODO(richo) Stash the types over which we're generic and tag this as being ethereal
+			a.Name = obj.NAME_EXTERN
+			a.Type = obj.TYPE_ADDR
+			a.Width = int64(Widthptr)
+			s = funcsym(s)
 		}
 
 		a.Sym = Linksym(s)
